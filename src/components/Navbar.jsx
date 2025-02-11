@@ -6,7 +6,8 @@ import { RxHamburgerMenu } from 'react-icons/rx'
 
 const Navbar = () => {
   return (
-    <div className='flex items-center justify-between px-2 sm:px-10'>
+    <div className=''>
+    <div className='flex fixed top-0 right-0 left-0 items-center justify-between px-2 sm:px-5 bg-white'>
         
         <div>
             <div className='flex items-center gap-4'>
@@ -39,6 +40,7 @@ const Navbar = () => {
             <IoMdNotificationsOutline size={25} className='cursor-pointer'/>
             <FaUserCircle size={40} className='cursor-pointer'/>
         </div>
+    </div>
     </div>
   )
 }

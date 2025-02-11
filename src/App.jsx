@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar"
+import Sidebar from "./components/Sidebar"
 
 function App() {
   
@@ -7,6 +8,10 @@ function App() {
       
       <Navbar/>
 
+      <div className="flex mt-14">
+        <Sidebar/>
+
+      </div>
 
    </main>
   )
