@@ -2,6 +2,7 @@ import React from 'react'
 import { IoMdHome } from 'react-icons/io';
 import { MdSubscriptions } from 'react-icons/md';
 import { SiYoutubeshorts } from 'react-icons/si';
+import { useSelector } from 'react-redux';
 
 const Sidebar = () => {
     const sidebarItem =[
@@ -31,8 +32,11 @@ const Sidebar = () => {
         {name: "Subscription", logo: <MdSubscriptions size={25}/>},
     ];
 
+    // get state from redux:
+    const sidebarToggle = useSelector((store)=> store.app.sidebarToggle);
+
   return (
-    <div className='flex-col px-5 w-[15%] h-[calc(100vh-4.625rem)] overflow-y-scroll '>
+    <div className='flex-col px-5 w-auto h-[calc(100vh-4.625rem)] overflow-y-scroll '>
 
         <div className='flex-col border-b pb-4 border-gray-400'>
             {
@@ -42,7 +46,7 @@ const Sidebar = () => {
                     key={item.name}
                     >
                         <div>{item.logo}</div>
-                        <div>{item.name}</div>
+                        <div className={`${sidebarToggle ? "": "hidden"}`}>{item.name}</div>
                     </div>
                 ))
             }

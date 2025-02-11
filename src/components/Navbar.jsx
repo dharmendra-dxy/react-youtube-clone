@@ -3,15 +3,30 @@ import { CiSearch } from 'react-icons/ci'
 import { FaUserCircle } from 'react-icons/fa'
 import { IoMdAddCircle, IoMdNotificationsOutline } from 'react-icons/io'
 import { RxHamburgerMenu } from 'react-icons/rx'
+import { useDispatch } from 'react-redux'
+import { handleSidebarToggleReducer } from '../store/appSlice'
 
 const Navbar = () => {
+
+    const dispatch = useDispatch();
+
+    const handleSidebarToggle = () => {
+
+        // update state: dispatch redux:
+        dispatch(handleSidebarToggleReducer());
+    }
+
   return (
     <div className=''>
     <div className='flex fixed top-0 right-0 left-0 items-center justify-between px-2 sm:px-5 bg-white'>
         
         <div>
             <div className='flex items-center gap-4'>
-                <RxHamburgerMenu size={25} className='cursor-pointer'/>
+                <RxHamburgerMenu 
+                size={25} 
+                onClick={handleSidebarToggle}
+                className='cursor-pointer'
+                />
                 <img 
                 src="https://cdn.mos.cms.futurecdn.net/8gzcr6RpGStvZFA2qRt4v6-650-80.jpg" 
                 alt=""
