@@ -2,7 +2,7 @@ import React from 'react'
 
 const FeedList = () => {
 
-    const lists = ["All", "Java", "Javascript", "Music", "Seedhe Maut", "Rap", "Beats", "Projects", "Cricket", "Games", "Python", "College", "Fest", "Mahakumbh"];
+    const lists = ["All", "Java", "Javascript", "Music", "SM", "Rap", "Beats", "Projects", "Cricket", "Games", "Python", "College", "Fest", "Mahakumbh"];
 
 
   return (
