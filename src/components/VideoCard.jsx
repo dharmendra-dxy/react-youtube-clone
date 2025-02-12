@@ -11,7 +11,7 @@ const VideoCard = ({item}) => {
         <img 
         src={item.snippet.thumbnails.high.url} 
         alt="thumbnail" 
-        className='rounded-lg cursor-pointer bg-cover'
+        className='rounded-lg cursor-pointer bg-cover w-full '
         />
 
         <div className='flex mt-2 gap-4'>
