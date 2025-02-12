@@ -1,9 +1,27 @@
-import React from 'react'
-import { FaUserCircle } from 'react-icons/fa'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { API_KEY, YOUTUBE_CHANNEL_API } from '../constants/youtube';
+import AvatarComp from './ui/AvatarComp';
 
 const VideoCard = ({item}) => {
     const title = item.snippet.title;
+    const CHANNEL_ID= item.snippet.channelId;
 
+    const [avatarSrc, setAvatarSrc] = useState([]);
+
+    const fetchYTChannel = async () => {
+        try{
+            const res =await axios.get(`${YOUTUBE_CHANNEL_API}&id=${CHANNEL_ID}&key=${API_KEY}`);
+            setAvatarSrc(res.data.items[0].snippet.thumbnails.high.url);
+        }
+        catch(error){
+            console.log("Error while fetching YTChannel: ", error);
+        }
+    }
+
+    useEffect(()=> {
+        fetchYTChannel();
+    }, []);
 
   return (
     <div className='lg:w-full w-[480px] bg-yellow-00 my-2'>
@@ -16,10 +34,7 @@ const VideoCard = ({item}) => {
 
         <div className='flex mt-2 gap-4'>
             <div>
-                <FaUserCircle 
-                size={40} 
-                className='cursor-pointer'
-                />
+                <AvatarComp src={avatarSrc}/>
             </div>
 
             <div>

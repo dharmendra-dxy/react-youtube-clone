@@ -36,7 +36,7 @@ const Sidebar = () => {
     const sidebarToggle = useSelector((store)=> store.app.sidebarToggle);
 
   return (
-    <div className='flex-col px-5 lg:w-[15%] sm:w-[30%] h-[calc(100vh-4.625rem)] overflow-y-scroll '>
+    <div className={`flex-col px-5 ${sidebarToggle ? "lg:w-[15%] w-[30%]": "lg:w-[5%] w-[10%]"}  h-[calc(100vh-4.625rem)] overflow-y-scroll`}>
 
         <div className='flex-col border-b pb-4 border-gray-400'>
             {
