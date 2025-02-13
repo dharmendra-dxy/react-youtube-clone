@@ -8,7 +8,6 @@ const VideoCard = ({item}) => {
     const CHANNEL_ID= item.snippet.channelId;
 
     const [avatarSrc, setAvatarSrc] = useState([]);
-
     const fetchYTChannel = async () => {
         try{
             const res =await axios.get(`${YOUTUBE_CHANNEL_API}&id=${CHANNEL_ID}&key=${API_KEY}`);
