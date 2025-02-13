@@ -1,21 +1,29 @@
-import Feed from "./components/Feed"
-import Navbar from "./components/Navbar"
-import Sidebar from "./components/Sidebar"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Navbar from "./components/Navbar";
+import WatchVideo from "./components/WatchVideo"
+import Sidebar from "./components/Sidebar";
+import Feed from "./components/Feed";
 
 function App() {
   
   return (
-   <main>
-      
+   <> 
+    <BrowserRouter>
+
       <Navbar/>
 
       <div className="flex mt-18">
         <Sidebar/>
-        <Feed/>
 
+        <Routes>
+          <Route path="/" element={<Feed/>}/>
+          <Route path="/watch" element={<WatchVideo/>}/>
+        </Routes>
       </div>
 
-   </main>
+      </BrowserRouter>
+
+   </>
   )
 }
 
