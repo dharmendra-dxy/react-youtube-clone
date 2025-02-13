@@ -49,7 +49,7 @@ const WatchVideo = () => {
             <iframe 
             width="560" 
             height="315" 
-            src={`https://www.youtube.com/embed/${videoId}?si=D_1qjI0w7UfMj0QV`}
+            src={`https://www.youtube.com/embed/${videoId}?&autoplay=1`}
             title="YouTube video player" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -64,7 +64,8 @@ const WatchVideo = () => {
                 </h1>
             </div>
 
-            <div className='flex justify-between'>
+            <div className='lg:flex  lg:justify-between bg-yellow-20\0'>
+
                 <div className='flex mt-2 gap-2 items-center'>
                     <AvatarComp 
                     src='https://cdn-icons-png.flaticon.com/512/6596/6596121.png'
@@ -73,7 +74,7 @@ const WatchVideo = () => {
                         
                     <div>
                         <h2 
-                        className='text-lg font-semibold text-gray-600 cursor-pointer hover:text-gray-700'>
+                        className='text-lg font-semibold text-gray-500 cursor-pointer hover:text-gray-700'>
                             {videoDetails?.snippet?.channelTitle}
                         </h2>
                         <h2 className='text-sm font-semibold text-gray-600'>300k subs</h2>
@@ -84,32 +85,34 @@ const WatchVideo = () => {
                     </button>
                 </div>
 
-                <div className='flex items-center gap-3'>
-                    <div className='flex'>
+                <div className='flex items-center lg:gap-3 gap-8 mt-4 lg:mt-0'>
 
+                    <div className='flex'>
                         <div className='flex border-r border-gray-600 pr-3 gap-3 bg-gray-200  hover:bg-gray-300 px-4 py-2 rounded-l-full cursor-pointer'>
                             <AiOutlineLike  size={20}/>
                             <p className='font-semibold'>{likesCount}</p>
                         </div>
+
                         <div className='pr-3 gap-3 bg-gray-200  hover:bg-gray-300 px-4 py-2 rounded-r-full cursor-pointer'>
                             <AiOutlineDislike size={20}/>
                         </div>
-
                     </div>
+
                     <div className='flex gap-2 bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded-full'>
-                        <IoIosShareAlt size={20} />
+                        <IoIosShareAlt size={20} className='cursor-pointer'/>
                         <p>Share</p>
                     </div>
+
                     <div className='flex gap-2 bg-gray-200 hover:bg-gray-300 px-2 py-2 rounded-full'>
-                        <HiDotsHorizontal size={20}/>
+                        <HiDotsHorizontal size={20} className='cursor-pointer'/>
                     </div>
+
                 </div>
             </div>
             
 
         </div>
         
-
 
     </div>
   )
