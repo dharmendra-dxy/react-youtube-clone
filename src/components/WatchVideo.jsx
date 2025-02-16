@@ -6,7 +6,8 @@ import axios from 'axios';
 import { API_KEY, YOUTUBE_SINGLE_VIDEO_DETAILS } from '../constants/youtube';
 import { AiOutlineDislike, AiOutlineLike } from 'react-icons/ai';
 import { IoIosShareAlt } from 'react-icons/io';
-import { HiDotsHorizontal } from 'react-icons/hi';
+import { HiDotsHorizontal, HiDotsVertical } from 'react-icons/hi';
+import Comment from './Comment';
 
 const WatchVideo = () => {
 
@@ -42,9 +43,10 @@ const WatchVideo = () => {
 
   return (
     <div 
-    className={`px-2 sm:px-5  ${sidebarToogle ? "lg:w-[80%] sm:w-[70%]" : "lg:w-[95%] w-auto"} `}
+    className={`px-2 sm:px-5 lg:flex lg:gap-3 ${sidebarToogle ? "lg:w-[80%] sm:w-[70%]" : "lg:w-[95%] w-auto"} `}
     >
-        <div className='w-full lg:w-[70%] h-full bg-yellow flex-col'>
+
+        <div className='w-full lg:w-[65%] bg-yellow mb-6 h-auto flex-col'>
 
             <iframe 
             width="560" 
@@ -67,8 +69,7 @@ const WatchVideo = () => {
             <div className='lg:flex  lg:justify-between bg-yellow-20\0'>
 
                 <div className='flex mt-2 gap-2 items-center'>
-                    <AvatarComp 
-                    src='https://cdn-icons-png.flaticon.com/512/6596/6596121.png'
+                    <AvatarComp
                     size="md"
                     />
                         
@@ -113,6 +114,9 @@ const WatchVideo = () => {
 
         </div>
         
+        <div className='lg:w-[35%] border border-gray-400 rounded-lg h-fit py-4'>
+            <Comment/>
+        </div>
 
     </div>
   )
